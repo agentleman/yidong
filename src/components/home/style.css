@@ -1,0 +1,135 @@
+.el-header,
+.el-footer {
+  background-color: #005BAC;
+  color: #333;
+  text-align: center;
+  line-height: 70px;
+}
+
+.el-container {
+  height: 100%;
+}
+
+.nav-con {
+  height: 70px !important;
+}
+
+.el-aside {
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+}
+
+.el-aside .el-menu-item,
+.el-aside .el-submenu__title {
+  border-bottom: 1px dashed blue;
+}
+
+.el-main {
+  background-color: #E9EEF3;
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+  padding-top: 10px;
+}
+
+body>.el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+
+.hea-wrap {
+  display: flex;
+  height: 70px;
+}
+
+.logo {
+  width: 60%;
+  text-align: left;
+}
+
+.auto-sear {
+  width: 27%;
+}
+
+el-autocomplete {
+  height: 35px;
+  border-radius: 6px;
+}
+
+.auto-sear .el-input__inner {
+  border-radius: 16px;
+  /* padding-left: 20px; */
+}
+
+.el-input--small .el-input__icon {
+  line-height: 32px;
+  position: absolute;
+  right: 2px;
+}
+
+.el-input__prefix,
+.el-input__suffix {
+  position: static;
+  height: 100%;
+  color: #C0C4CC;
+  right: 0 !important;
+  text-align: center;
+}
+
+.person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user {
+  height: 40px;
+}
+
+.action {
+  height: 40px;
+  width: 50px;
+  line-height: 40px;
+  margin-left: 12px;
+}
+
+.el-dropdown-link {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.el-icon-arrow-down {
+  font-size: 12px;
+}
+
+.shut {
+  color: #ffffff;
+  margin-left: 40px;
+  font-size: 22px;
+}
+
+.shut i {
+  cursor: pointer;
+}
+
+.block {
+  height: 70px !important;
+}
+
+.el-image {
+  height: 70px !important;
+}
+
+.el-menu-item-group__title{
+  display: none;
+}

@@ -1,0 +1,133 @@
+<el-container>
+  <el-header class="demin_header">
+    <div class="btn-wrap">
+      <!-- <el-button class="acive" size="small" plain>客户数量</el-button> -->
+
+      <el-button class="b_l" size="medium" type="text">客户数量</el-button>
+      <el-button size="small" @click="deminClickBack">返回</el-button>
+    </div>
+  </el-header>
+  <el-main class="demin_main">
+    <div class="select_top">
+      <el-form size="small" :inline="true" :model="search_form" class="demo-form-inline">
+        <el-form-item label="指标主题">
+          <el-select v-model="search_form.theme" placeholder="指标主题">
+            <el-option label="代理人" value="shanghai"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="指标">
+          <el-select v-model="search_form.idicate" placeholder="指标">
+            <el-option label="长险销售额" value="shanghai"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="指标维度">
+          <el-select v-model="search_form.dimension" @change="dimenChose" placeholder="指标维度">
+            <el-option label="代理人信息" value="dlr_info"></el-option>
+            <el-option label="代理人所属机构" value="dlr_inst"></el-option>
+            <el-option label="业务区" value="yw_area"></el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+    </div>
+
+    <el-row class="timer_con">
+      <el-col :span="24" class="date_ser">
+        <div class="grid-content bg-purple-dark"> <span class="date_til">日期区间</span>
+          <el-date-picker size='small' v-model="value1" type="daterange" range-separator="至" start-placeholder="开始日期"
+            end-placeholder="结束日期">
+          </el-date-picker>
+        </div>
+        <div v-show="search_form.dimension.indexOf('info')!=-1" class="ser_wrap">
+          <span>代理人工号</span>
+          <el-autocomplete size='small' v-model="state" class="auto_res" :fetch-suggestions="querySearchAsync"
+            placeholder="请输入内容" @select="handleSelect"></el-autocomplete>
+        </div>
+
+      </el-col>
+    </el-row>
+
+    <div class="select_res select_top">
+      <el-form v-show="search_form.dimension.indexOf('inst')!=-1" size="small" :inline="true" :model="inst_form"
+        class="demo-form-inline">
+        <el-form-item label="分公司">
+          <el-select v-model="inst_form.branch" placeholder="分公司">
+            <el-option label="代理人" value="shanghai"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="中支公司">
+          <el-select v-model="inst_form.mid_branch" placeholder="中支公司">
+            <el-option label="长险销售额" value="shanghai"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="四级机构">
+          <el-select v-model="inst_form.third_branch" placeholder="四级机构">
+            <el-option label="代理人信息" value="dlr_info"></el-option>
+            <el-option label="代理人所属机构" value="dlr_inst"></el-option>
+            <el-option label="业务区" value="yw_area"></el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+
+
+      <el-form v-show="search_form.dimension.indexOf('yw')!=-1" size="small" :inline="true" :model="yewu_form"
+        class="demo-form-inline">
+        <el-form-item label="业务区">
+          <el-select v-model="yewu_form.area" placeholder="业务区">
+            <el-option label="代理人" value="shanghai"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="业务部">
+          <el-select v-model="yewu_form.part" placeholder="业务部">
+            <el-option label="长险销售额" value="shanghai"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="业务室">
+          <el-select v-model="yewu_form.room" placeholder="业务室">
+            <el-option label="代理人信息" value="dlr_info"></el-option>
+            <el-option label="代理人所属机构" value="dlr_inst"></el-option>
+            <el-option label="业务区" value="yw_area"></el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+
+    </div>
+
+    <diV class="query_con">
+      <el-button type="primary" size="small">主要按钮</el-button>
+    </diV>
+    <div >
+      <el-table :data="tableData" height="360px"  :header-cell-style="tableHeaderStyle"  size="small" border style="width: 100%">
+        <el-table-column prop="date" label="机构" >
+        </el-table-column>
+        <el-table-column prop="name" label="产品" >
+        </el-table-column>
+        <el-table-column prop="address" label="业务区">
+        </el-table-column>
+        <el-table-column prop="address" label="业务部">
+        </el-table-column>
+        <el-table-column prop="address" label="业务室">
+        </el-table-column>
+        <el-table-column prop="address" label="客户来源">
+        </el-table-column>
+        <el-table-column prop="address" label="客户类型">
+        </el-table-column>
+        <el-table-column prop="address" label="事件">
+        </el-table-column>
+        <el-table-column prop="address" label="学历">
+        </el-table-column>
+        <el-table-column prop="address" label="年龄">
+        </el-table-column>
+      </el-table>
+    </div>
+
+
+
+
+
+
+
+
+  </el-main>
+
+
+</el-container>

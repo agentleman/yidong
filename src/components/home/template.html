@@ -1,0 +1,68 @@
+<el-container>
+  <el-header class="nav-con">
+    <div class="hea-wrap">
+      <div class="logo">
+        <div class="demo-image__placeholder">
+          <div class="block">
+            <el-image :src="logourl"></el-image>
+          </div>
+        </div>
+      </div>
+      <div class="auto-sear">
+        <el-autocomplete size="small" v-model="state" :fetch-suggestions="querySearchAsync" placeholder="请输入内容"
+          @select="handleSelect"> <i slot="prefix" class="el-input__icon el-icon-search"></i></el-autocomplete>
+      </div>
+      <div class="person">
+        <div class="user">
+          <el-avatar :src="imgurl" :key=imgurl> user </el-avatar>
+        </div>
+        <div class="action">
+          <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              张三<i class="el-icon-arrow-down el-icon--right"></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>个人中心</el-dropdown-item>
+              <el-dropdown-item>设置</el-dropdown-item>
+              <el-dropdown-item>退出</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div>
+        <div class="shut">
+          <i class="el-icon-switch-button
+          "></i>
+        </div>
+      </div>
+    </div>
+  </el-header>
+  <el-container>
+    <el-aside width="200px" v-show="menu_show">
+      <el-col :span="24">
+        <el-menu default-active="2" :router='true' size="mini" class="el-menu-vertical-demo" @open="handleOpen"
+          @close="handleClose">
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>首页</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item @select="selceted" index="/midmain">业务指标</el-menu-item>
+              <el-menu-item index="1-2">基础指标</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-menu-item index="3">
+            <i class="el-icon-document"></i>
+            <span slot="title">导航三</span>
+          </el-menu-item>
+          <el-menu-item index="4">
+            <i class="el-icon-setting"></i>
+            <span slot="title">导航四</span>
+          </el-menu-item>
+        </el-menu>
+      </el-col>
+    </el-aside>
+    <el-main>
+      <router-view @titleClick="childEvent"></router-view>
+    </el-main>
+  </el-container>
+</el-container>

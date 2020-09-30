@@ -1,0 +1,91 @@
+<el-container>
+  <el-header class="nav-mid">
+    <div class="btn-wrap">
+      <el-button class="acive" size="medium" plain>长险销售额</el-button>
+      <!-- <el-button size="medium" plain>机构</el-button>
+      <el-button size="medium" plain>当日</el-button>
+      <el-button size="medium" plain>近一月</el-button>
+      <el-button size="medium" plain>近一年</el-button>
+      <el-button size="medium" plain>日期</el-button> -->
+    </div>
+  </el-header>
+  <el-main class="mid-main">
+    <div class="pic-wrap">
+      <div class="pic-item">
+        <div class="charts-wrap">
+          <div class="charts-title-wrap">
+            <span class="title" @click="midTilClick">全国长险销售额分部情况
+              <div class="line"></div>
+            </span>
+           
+          </div>
+          <div class="chr-item" id="map">
+
+          </div>
+        </div>
+      </div>
+      <div class="pic-item">
+        <div class="charts-wrap">
+          <div class="charts-title-wrap">
+            <span class="title"  @click="midTilClick" >长险销售额排名前五代理人
+              <div class="line"></div>
+            </span>
+          </div>
+          <div class="chr-item" id="bar-f">
+
+          </div>
+        </div>
+      </div>
+      <div class="pic-item">
+        <div class="charts-wrap">
+          <div class="charts-title-wrap">
+            <span class="title" @click="midTilClick">长险销售额排名前五机构
+              <div class="line"></div>
+            </span>
+          </div>
+          <div class="chr-item" id="bar-s">
+
+          </div>
+        </div>
+      </div>
+      <div class="pic-item">
+        <div class="charts-wrap">
+          <div class="charts-title-wrap">
+            <span class="title" @click="midTilClick">近一年长险销售额趋势
+              <div class="line"></div>
+            </span>
+          </div>
+          <div class="chr-item" id="line-f">
+
+          </div>
+        </div>
+      </div>
+      <div class="pic-item">
+        <div class="charts-wrap">
+          <div class="charts-title-wrap">
+            <span class="title" @click="midTilClick">全国客户数量分部情况
+              <div class="line"></div>
+            </span>
+          </div>
+          <div class="chr-item" id="pie-f">
+
+          </div>
+        </div>
+      </div>
+      <div class="pic-item">
+        <div class="charts-wrap">
+          <div class="charts-title-wrap">
+            <span class="title" @click="midTilClick">长险销售额年度对比
+              <div class="line"></div>
+            </span>
+          </div>
+          <div class="chr-item" id="bar-t">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </el-main>
+</el-container>
